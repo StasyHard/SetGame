@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Card {
     var identifier = 0
     var figure: Figure

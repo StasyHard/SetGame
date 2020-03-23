@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Figure {
     
     enum TypeFigure: String {
