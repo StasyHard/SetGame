@@ -23,7 +23,7 @@ final class SetGame {
        createDeck()
     }
     
-    //MARK: - Open functions
+    //MARK: - Open metods
     func createDeck() {
         for type in Figure.TypeFigure.all {
             for count in Figure.Count.all{
