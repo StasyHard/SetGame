@@ -9,12 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: - IBOutlet
+    
+    @IBOutlet var cardsView: [UIView]!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+//MARK: - IBAction
+    @IBAction func dealThreeCard(_ sender: UIButton) {
+    }
+    
+    @IBAction func andGame(_ sender: UIButton) {
+    }
+    
+    
 }
 

@@ -158,6 +158,9 @@
                                                 <state key="normal" title="DEAL 3 CARD">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="dealThreeCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEq-Mh-LPe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-yg-6RX">
                                                 <rect key="frame" x="128" y="0.0" width="118" height="30"/>
@@ -165,6 +168,9 @@
                                                 <state key="normal" title="AND GAME">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="andGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hqv-nH-BNo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -189,6 +195,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="uy0-Kv-kM4" id="p35-qn-oQs"/>
+                        <outletCollection property="cardsView" destination="cXi-8r-P1L" collectionClass="NSMutableArray" id="WpO-bo-RUe"/>
+                        <outletCollection property="cardsView" destination="Et4-kz-S4H" collectionClass="NSMutableArray" id="uNe-kl-laD"/>
+                        <outletCollection property="cardsView" destination="Mga-ER-hD2" collectionClass="NSMutableArray" id="jlt-sC-uZv"/>
+                        <outletCollection property="cardsView" destination="vqJ-06-V1F" collectionClass="NSMutableArray" id="EMY-gh-W94"/>
+                        <outletCollection property="cardsView" destination="0UH-vg-iHw" collectionClass="NSMutableArray" id="RLn-Qg-hy8"/>
+                        <outletCollection property="cardsView" destination="T0u-wL-4UL" collectionClass="NSMutableArray" id="OVp-LN-Lyd"/>
+                        <outletCollection property="cardsView" destination="9Be-GW-GfH" collectionClass="NSMutableArray" id="ZJ9-Ne-hCk"/>
+                        <outletCollection property="cardsView" destination="Nmj-WE-1aY" collectionClass="NSMutableArray" id="XCm-SJ-uKl"/>
+                        <outletCollection property="cardsView" destination="67V-tD-pVd" collectionClass="NSMutableArray" id="wjo-bZ-Qd0"/>
+                        <outletCollection property="cardsView" destination="svm-N7-eMk" collectionClass="NSMutableArray" id="xAz-mK-L43"/>
+                        <outletCollection property="cardsView" destination="vNT-V2-zmB" collectionClass="NSMutableArray" id="dn1-Sz-exY"/>
+                        <outletCollection property="cardsView" destination="MH6-nk-eZq" collectionClass="NSMutableArray" id="6Le-iz-QHJ"/>
+                        <outletCollection property="cardsView" destination="cBg-h7-iBq" collectionClass="NSMutableArray" id="j0T-HK-pPz"/>
+                        <outletCollection property="cardsView" destination="JuS-sB-1Fw" collectionClass="NSMutableArray" id="Puq-yn-neP"/>
+                        <outletCollection property="cardsView" destination="zLm-0n-e5o" collectionClass="NSMutableArray" id="JcF-gp-Zcu"/>
+                        <outletCollection property="cardsView" destination="bxd-jB-Sfo" collectionClass="NSMutableArray" id="XBA-hh-D3D"/>
+                        <outletCollection property="cardsView" destination="JHN-9L-vfe" collectionClass="NSMutableArray" id="1KS-W3-9qp"/>
+                        <outletCollection property="cardsView" destination="5r6-xf-2o9" collectionClass="NSMutableArray" id="LSZ-I9-16g"/>
+                        <outletCollection property="cardsView" destination="1F1-NG-nFF" collectionClass="NSMutableArray" id="T3w-Y7-kMI"/>
+                        <outletCollection property="cardsView" destination="b8p-K7-1MS" collectionClass="NSMutableArray" id="QSE-Os-ENm"/>
+                        <outletCollection property="cardsView" destination="nLs-rg-dvX" collectionClass="NSMutableArray" id="TAc-h9-81C"/>
+                        <outletCollection property="cardsView" destination="TVx-go-TpJ" collectionClass="NSMutableArray" id="eG1-BG-r6m"/>
+                        <outletCollection property="cardsView" destination="DaP-53-LmI" collectionClass="NSMutableArray" id="0gh-Ou-rUv"/>
+                        <outletCollection property="cardsView" destination="NLb-is-TBi" collectionClass="NSMutableArray" id="lCd-HK-y0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
