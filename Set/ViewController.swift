@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: - IBOutlet
-    @IBOutlet var cardsView: [UIView]!
+    @IBOutlet var cardsView: [CardView]!
     @IBOutlet weak var timeLabel: UILabel!
     
     //MARK: - Properties
@@ -22,9 +22,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         game.delegate = self
         game.start()
+        hideCardViewsWithoutCard()
+    }    
+    
+    //MARK: - Metods
+    private func hideCardViewsWithoutCard() {
+        for index in 0..<cardsView.count {
+            if cardsView[index].figure == nil {
+                cardsView[index].isHidden = true
+            }
+        }
     }
     
-//MARK: - IBAction
+    //MARK: - IBAction
     @IBAction func dealThreeCard(_ sender: UIButton) {
     }
     
@@ -32,14 +42,14 @@ class ViewController: UIViewController {
     }
 }
 
+//MARK: - GameActionsProtocol
 extension ViewController: GameActionsProtocol {
     func takeCards(cards: [Card]) {
-        print(cards.count)
-        for card in 0..<cards.count {
-            
+        for index in 0..<cards.count {
+            if cardsView[index].figure == nil {
+                cardsView[index].figure = cards[index].figure
+            }
         }
     }
-    
-    
 }
 
