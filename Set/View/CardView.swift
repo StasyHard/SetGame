@@ -36,13 +36,13 @@ class CardView: UIView {
     
     //MARK: Draw figure metods
     func drawFigures(onCard rect: CGRect) {
-        let rects = rectCount(on: rect)
+        let rects = rectCount(onCard: rect)
         rects.forEach { rect in
             drawFigureInRect(rect)
         }
     }
     
-    func rectCount(on card: CGRect) -> [CGRect] {
+    func rectCount(onCard card: CGRect) -> [CGRect] {
         var rects = [CGRect]()
         
         let rectHeight: CGFloat = card.height / 3
