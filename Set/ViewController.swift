@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         game.cardIsTapped(card: sender.card)
     }
     
-    
     @IBAction func dealThreeCard(_ sender: UIButton) {
     }
     

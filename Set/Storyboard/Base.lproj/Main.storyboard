@@ -25,28 +25,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="dbW-ml-jGx"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYo-3S-CMv"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Et4-kz-S4H" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="YB5-SS-RKb"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vWh-oK-ZGE"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-ER-hD2" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="y38-dU-bfx"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zO-lu-Le5"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-06-V1F" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="q8Q-E9-eoF"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIA-wl-xzv"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -58,28 +58,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="d2j-cA-4jH"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SV2-5E-FRd"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0u-wL-4UL" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="xyT-89-Wk6"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tzl-be-QYi"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Be-GW-GfH" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="dx2-fY-OJq"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e6G-6x-La7"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmj-WE-1aY" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="mdN-f2-efn"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uvv-jQ-82E"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -91,28 +91,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="U6p-0H-aQW"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="46h-Eg-Ki2"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svm-N7-eMk" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="qJW-us-0rF"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KCh-VE-T9g"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNT-V2-zmB" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="NIQ-ES-2Dc"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kxe-HS-kOL"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH6-nk-eZq" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="Acz-Go-skT"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TvO-AN-eW3"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -124,28 +124,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="lhQ-fc-DpB"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7a5-Yo-3lA"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-sB-1Fw" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="abi-zK-a7b"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8se-S6-OiG"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLm-0n-e5o" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="mJF-lZ-pFv"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RKB-XW-6jU"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxd-jB-Sfo" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="6g5-ZU-oR0"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jFy-wP-9RR"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -157,28 +157,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="IFJ-0S-DCA"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDn-Aj-M2L"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5r6-xf-2o9" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="ACX-qT-u4T"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oGn-33-vwp"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F1-NG-nFF" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="SPL-kL-Q94"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qMD-iD-5vO"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8p-K7-1MS" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="KvD-jG-kzc"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQw-g9-2EH"/>
                                                 </connections>
                                             </view>
                                         </subviews>
@@ -190,28 +190,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="OoR-uq-fgm"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pe-94-nUI"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-go-TpJ" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="89" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="78k-Fm-Wnh"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ux-L9-Bvd"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaP-53-LmI" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="4B1-Lc-lNY"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95l-zs-pfS"/>
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-is-TBi" customClass="CardView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="267" y="0.0" width="81" height="124.66666666666667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="valueChanged" id="KZX-v8-eiA"/>
+                                                    <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fw0-zl-zc1"/>
                                                 </connections>
                                             </view>
                                         </subviews>

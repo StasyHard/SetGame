@@ -48,6 +48,6 @@ final class SetGame {
     }
     
     func cardIsTapped(card: Card?) {
-        
+        print(card)
     }
 }
