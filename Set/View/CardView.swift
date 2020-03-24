@@ -13,15 +13,16 @@ class CardView: UIView {
     //MARK: - Properties
     var figure: Figure? {
         didSet {
+            // setNeedsDisplay in rect
             //setNeedsDisplay()
         }
     }
-    private let padding: CGFloat = 5.0
+    private let padding: CGFloat = 6.0
     
     //MARK: - Private metods
     override func draw(_ rect: CGRect) {
         drawCard(in: rect)
-        drawFigure(in: rect)
+        drawFigures(onCard: rect)
     }
     
     private func drawCard(in rect: CGRect) {
@@ -34,50 +35,48 @@ class CardView: UIView {
     }
     
     //MARK: Draw figure metods
-    private func drawFigure(in rect: CGRect) {
-        let rect1 = CGRect(x: 0, y: 0, width: rect.width, height: rect.height / 3)
-        let rect2 = CGRect(x: 0, y: rect1.maxY, width: rect.width, height: rect.height / 3)
-        let rect3 = CGRect(x: 0, y: rect2.maxY, width: rect.width, height: rect.height / 3)
+    func drawFigures(onCard rect: CGRect) {
+        let rects = rectCount(on: rect)
+        rects.forEach { rect in
+            drawFigureInRect(rect)
+        }
+    }
+    
+    func rectCount(on card: CGRect) -> [CGRect] {
+        var rects = [CGRect]()
         
+        let rectHeight: CGFloat = card.height / 3
+        let rectWidth: CGFloat = card.width
+        let rect1 = CGRect(x: 0, y: 0, width: rectWidth, height: rectHeight)
+        let rect2 = CGRect(x: 0, y: rect1.maxY, width: rectWidth, height: rectHeight)
+        let rect3 = CGRect(x: 0, y: rect2.maxY, width: rectWidth, height: rectHeight)
+        
+        guard let figure = figure else { return rects }
+        switch figure.count {
+        case .one:
+            rects.append(rect2)
+        case .two:
+            let rect1 = CGRect(x: 0, y: rect1.midY, width: rectWidth, height: rectHeight)
+            let rect2 = CGRect(x: 0, y: rect2.midY, width: rectWidth, height: rectHeight)
+            rects.append(rect1)
+            rects.append(rect2)
+        case .three:
+            rects.append(rect1)
+            rects.append(rect2)
+            rects.append(rect3)
+        }
+        return rects
+    }
+    
+    private func drawFigureInRect(_ rect: CGRect) {
         guard let figure = figure else { return }
-        
         switch figure.type {
         case .oval:
-            switch figure.count {
-            case .one:
-                drawOval(in: rect2)
-            case .two:
-                drawOval(in: rect1)
-                drawOval(in: rect3)
-            case .three:
-                drawOval(in: rect1)
-                drawOval(in: rect2)
-                drawOval(in: rect3)
-            }
+            drawOval(in: rect)
         case .rectangle:
-            switch figure.count {
-            case .one:
-                drawRectangle(in: rect2)
-            case .two:
-                drawRectangle(in: rect1)
-                drawRectangle(in: rect3)
-            case .three:
-                drawRectangle(in: rect1)
-                drawRectangle(in: rect2)
-                drawRectangle(in: rect3)
-            }
+            drawRectangle(in: rect)
         case .triangle:
-            switch figure.count {
-            case .one:
-                drawTriangle(in: rect2)
-            case .two:
-                drawTriangle(in: rect1)
-                drawTriangle(in: rect3)
-            case .three:
-                drawTriangle(in: rect1)
-                drawTriangle(in: rect2)
-                drawTriangle(in: rect3)
-            }
+            drawTriangle(in: rect)
         }
     }
     
@@ -111,7 +110,7 @@ class CardView: UIView {
     }
     
     
-    func setColorAndFill(on path: UIBezierPath) {
+    private func setColorAndFill(on path: UIBezierPath) {
         guard let figure = figure else { return }
         let color = setColor(for: figure)
         setFill(on: path, color)
@@ -130,7 +129,7 @@ class CardView: UIView {
         return color
     }
     
-    func setFill(on path: UIBezierPath, _ color: UIColor) {
+    private func setFill(on path: UIBezierPath, _ color: UIColor) {
         switch figure!.fill {
         case .filled:
             color.setFill()

@@ -23,10 +23,4 @@ struct Card {
         Card.identifierFactory += 1
         return identifierFactory
     }
-
-//    mutating func changeIsMatched() {
-//        if isMatched == false {
-//            isMatched = true
-//        }
-//    }
 }

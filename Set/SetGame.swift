@@ -44,7 +44,6 @@ final class SetGame {
             let card = deck.removeFirst()
             gameCards.append(card)
         }
-        print(gameCards.count)
         delegate?.takeCards(cards: gameCards)
 }
 }
