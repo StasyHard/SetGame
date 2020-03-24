@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CardView: UIView {
+class CardView: UIControl {
     
     //MARK: - Properties
-    var figure: Figure? {
+    var card: Card? {
         didSet {
             // setNeedsDisplay in rect
             //setNeedsDisplay()
@@ -35,23 +35,23 @@ class CardView: UIView {
     }
     
     //MARK: Draw figure metods
-    func drawFigures(onCard rect: CGRect) {
+    private func drawFigures(onCard rect: CGRect) {
         let rects = rectCount(onCard: rect)
         rects.forEach { rect in
             drawFigureInRect(rect)
         }
     }
     
-    func rectCount(onCard card: CGRect) -> [CGRect] {
+    private func rectCount(onCard rect: CGRect) -> [CGRect] {
         var rects = [CGRect]()
         
-        let rectHeight: CGFloat = card.height / 3
-        let rectWidth: CGFloat = card.width
+        let rectHeight: CGFloat = rect.height / 3
+        let rectWidth: CGFloat = rect.width
         let rect1 = CGRect(x: 0, y: 0, width: rectWidth, height: rectHeight)
         let rect2 = CGRect(x: 0, y: rect1.maxY, width: rectWidth, height: rectHeight)
         let rect3 = CGRect(x: 0, y: rect2.maxY, width: rectWidth, height: rectHeight)
         
-        guard let figure = figure else { return rects }
+        guard let figure = card?.figure else { return rects }
         switch figure.count {
         case .one:
             rects.append(rect2)
@@ -69,7 +69,7 @@ class CardView: UIView {
     }
     
     private func drawFigureInRect(_ rect: CGRect) {
-        guard let figure = figure else { return }
+        guard let figure = card?.figure else { return }
         switch figure.type {
         case .oval:
             drawOval(in: rect)
@@ -111,7 +111,7 @@ class CardView: UIView {
     
     
     private func setColorAndFill(on path: UIBezierPath) {
-        guard let figure = figure else { return }
+        guard let figure = card?.figure else { return }
         let color = setColor(for: figure)
         setFill(on: path, color)
     }
@@ -130,7 +130,8 @@ class CardView: UIView {
     }
     
     private func setFill(on path: UIBezierPath, _ color: UIColor) {
-        switch figure!.fill {
+        guard let figure = card?.figure else { return }
+        switch figure.fill {
         case .filled:
             color.setFill()
             path.fill()

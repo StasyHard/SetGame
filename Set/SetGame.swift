@@ -18,9 +18,9 @@ final class SetGame {
     
     private var deck = [Card]()
     
-     //MARK: - Life cycle
+    //MARK: - Life cycle
     init() {
-       createDeck()
+        createDeck()
     }
     
     //MARK: - Open metods
@@ -45,5 +45,9 @@ final class SetGame {
             gameCards.append(card)
         }
         delegate?.takeCards(cards: gameCards)
-}
+    }
+    
+    func cardIsTapped(card: Card?) {
+        
+    }
 }

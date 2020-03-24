@@ -28,13 +28,18 @@ class ViewController: UIViewController {
     //MARK: - Metods
     private func hideCardViewsWithoutCard() {
         cardsView.forEach { cardView in
-            if cardView.figure == nil {
+            if cardView.card == nil {
                 cardView.isHidden = true
             }
         }
     }
     
     //MARK: - IBAction
+    @IBAction func touchCard(_ sender: CardView) {
+        game.cardIsTapped(card: sender.card)
+    }
+    
+    
     @IBAction func dealThreeCard(_ sender: UIButton) {
     }
     
@@ -46,8 +51,8 @@ class ViewController: UIViewController {
 extension ViewController: GameActionsProtocol {
     func takeCards(cards: [Card]) {
         for index in cards.indices {
-            if cardsView[index].figure == nil {
-                cardsView[index].figure = cards[index].figure
+            if cardsView[index].card == nil {
+                cardsView[index].card = cards[index]
             }
         }
     }
