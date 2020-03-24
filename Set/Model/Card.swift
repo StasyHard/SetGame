@@ -9,14 +9,14 @@
 import Foundation
 
 struct Card {
-    var identifier = 0
+    var id = 0
     var figure: Figure
     
     private static var identifierFactory = 0
     
     init(figure: Figure) {
         self.figure = figure
-        self.identifier = Card.getUniqueIdentifier()
+        self.id = Card.getUniqueIdentifier()
     }
     
     private static func getUniqueIdentifier() -> Int  {

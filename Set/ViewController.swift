@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         hideCardViewsWithoutCard()
     }
     
-    //MARK: - Metods
+    //MARK: - Private metods
     private func hideCardViewsWithoutCard() {
         cardsView.forEach { cardView in
             if cardView.card == nil {
@@ -48,12 +48,61 @@ class ViewController: UIViewController {
 
 //MARK: - GameActionsProtocol
 extension ViewController: GameActionsProtocol {
+    
     func takeCards(cards: [Card]) {
-        for index in cards.indices {
-            if cardsView[index].card == nil {
-                cardsView[index].card = cards[index]
+        for card in cards {
+            for view in cardsView {
+                if view.card == nil {
+                    view.card = card
+                    break
+                }
+            }
+        }
+    }
+    
+    func cardIsSelected(_ card: Card) {
+        cardsView.forEach { cardView in
+            if cardView.card?.id == card.id {
+                cardView.setNewState(state: .selected)
+            }
+        }
+    }
+    
+    func cardsIsSet(_ cards: [Card]) {
+        for card in cards {
+            for cardView in cardsView {
+                if cardView.card?.id == card.id {
+                    cardView.setNewState(state: .set)
+                }
+            }
+        }
+    }
+    
+    func cardsNotSet(_ cards: [Card]) {
+        for card in cards {
+            for cardView in cardsView {
+                if cardView.card?.id == card.id {
+                    cardView.setNewState(state: .notSet)
+                }
+            }
+        }
+    }
+    
+    func cardsIsNotSelected(_ cards: [Card]) {
+        for card in cards {
+            for cardView in cardsView {
+                if cardView.card?.id == card.id {
+                    cardView.setNewState(state: .notSelected)
+                }
+            }
+        }
+    }
+    
+    func cardIsNotSelected(_ card: Card) {
+        cardsView.forEach { cardView in
+            if cardView.card?.id == card.id {
+                cardView.setNewState(state: .notSelected)
             }
         }
     }
 }
-

@@ -8,21 +8,39 @@
 
 import UIKit
 
+enum CardState {
+    case selected
+    case notSet
+    case set
+    case notSelected
+}
+
 class CardView: UIControl {
     
     //MARK: - Properties
-    var card: Card? {
-        didSet {
-            // setNeedsDisplay in rect
-            //setNeedsDisplay()
+    var card: Card? 
+    private let padding: CGFloat = 6.0
+    
+    //MARK: - Public metods
+    func setNewState(state: CardState){
+        switch state {
+        case .selected:
+            setStroke(width: 3.0, color: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1))
+        case .notSet:
+            setStroke(width: 5.0, color: #colorLiteral(red: 0.8073362586, green: 0, blue: 0, alpha: 1))
+        case .set:
+            setStroke(width: 5.0, color: #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1))
+        case .notSelected:
+            layer.borderWidth = 0
         }
     }
-    private let padding: CGFloat = 6.0
     
     //MARK: - Private metods
     override func draw(_ rect: CGRect) {
         drawCard(in: rect)
-        drawFigures(onCard: rect)
+        if card != nil {
+            drawFigures(onCard: rect)
+        }
     }
     
     private func drawCard(in rect: CGRect) {
@@ -32,6 +50,13 @@ class CardView: UIControl {
         roundedRect.fill()
         UIColor.gray.setStroke()
         roundedRect.stroke()
+    }
+    
+    private func setStroke(width: CGFloat, color: UIColor) {
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
+        layer.cornerRadius = 10.0
+        setNeedsDisplay(bounds)
     }
     
     //MARK: Draw figure metods
@@ -139,7 +164,7 @@ class CardView: UIControl {
             color.setStroke()
             path.stroke()
         case .striped:
-            let colorFill = color.withAlphaComponent(0.4)
+            let colorFill = color.withAlphaComponent(0.25)
             colorFill.setFill()
             color.setStroke()
             path.fill()
