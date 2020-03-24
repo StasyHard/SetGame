@@ -18,7 +18,11 @@ enum CardState {
 class CardView: UIControl {
     
     //MARK: - Properties
-    var card: Card? 
+    var card: Card? {
+        didSet {
+            setNeedsDisplay(bounds)
+        }
+    }
     private let padding: CGFloat = 6.0
     
     //MARK: - Public metods

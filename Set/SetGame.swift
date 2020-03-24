@@ -71,6 +71,17 @@ final class SetGame {
         }
     }
     
+    func dealCards() {
+        if deck.count >= 3 {
+            var gameCards = [Card]()
+            for _ in 1...3 {
+                let card = deck.removeFirst()
+                gameCards.append(card)
+            }
+            delegate?.takeCards(cards: gameCards)
+        }
+    }
+    
     //MARK: - Private metods
     private func checkCardForAvailabilityInSelectedCards(card: Card) -> Bool {
         var isSelected = false

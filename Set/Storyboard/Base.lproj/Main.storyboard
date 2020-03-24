@@ -231,7 +231,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="dealThreeCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEq-Mh-LPe"/>
+                                                    <action selector="dealCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEq-Mh-LPe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-yg-6RX">
