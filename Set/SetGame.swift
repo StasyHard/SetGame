@@ -18,6 +18,7 @@ final class SetGame {
     weak var delegate: GameActionsProtocol?
     
     private var deck = [Card]()
+    var gameCards = [Card]()
     private var selectedCards = [Card]()
     
     //MARK: - Life cycle
@@ -27,9 +28,8 @@ final class SetGame {
     
     //MARK: - Open metods
     func start() {
-        var gameCards = [Card]()
-        for _ in 1...12 {
-            let card = deck.removeFirst()
+        while gameCards.count < 12 {
+            let card = deck.removeLast()
             gameCards.append(card)
         }
         delegate?.takeCards(cards: gameCards)

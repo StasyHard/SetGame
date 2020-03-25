@@ -41,11 +41,9 @@ class CardView: UIControl {
     
     //MARK: - Private metods
     override func draw(_ rect: CGRect) {
-        drawCard(in: rect)
         if card != nil {
+            drawCard(in: rect)
             drawFigures(onCard: rect)
-        } else {
-            self.isHidden = true
         }
     }
     

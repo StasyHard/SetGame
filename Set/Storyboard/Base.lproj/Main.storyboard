@@ -227,7 +227,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-0B-xM5">
                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
                                                 <color key="backgroundColor" red="0.56230300659999999" green="0.83189171549999996" blue="0.96080797910000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="DEAL 3 CARD">
+                                                <state key="normal" title="DEAL 3 CARDS">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>

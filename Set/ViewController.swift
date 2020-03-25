@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         game.delegate = self
         game.start()
-        //hideCardViewsWithoutCard()
     }
     
     //MARK: - Private metods
@@ -34,11 +33,6 @@ class ViewController: UIViewController {
     
     @IBAction func dealCards(_ sender: UIButton) {
         game.dealCards()
-        cardsView.forEach { cardView in
-            if cardView.card != nil && cardView.isHidden == true {
-                cardView.isHidden = false
-            }
-        }
     }
     
     @IBAction func restartGame(_ sender: UIButton) {
