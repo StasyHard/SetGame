@@ -44,6 +44,8 @@ class CardView: UIControl {
         drawCard(in: rect)
         if card != nil {
             drawFigures(onCard: rect)
+        } else {
+            self.isHidden = true
         }
     }
     

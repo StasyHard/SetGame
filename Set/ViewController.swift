@@ -22,17 +22,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         game.delegate = self
         game.start()
-        hideCardViewsWithoutCard()
+        //hideCardViewsWithoutCard()
     }
     
     //MARK: - Private metods
-    private func hideCardViewsWithoutCard() {
-        cardsView.forEach { cardView in
-            if cardView.card == nil {
-                cardView.isHidden = true
-            }
-        }
-    }
     
     //MARK: - IBAction
     @IBAction func touchCard(_ sender: CardView) {
