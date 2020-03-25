@@ -26,7 +26,7 @@ class CardView: UIControl {
     private let padding: CGFloat = 6.0
     
     //MARK: - Public metods
-    func setNewState(state: CardState){
+    func setNewState(_ state: CardState) {
         switch state {
         case .selected:
             setStroke(width: 3.0, color: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1))

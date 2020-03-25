@@ -10,11 +10,7 @@ import Foundation
 
 protocol GameActionsProtocol: class {
     func takeCards(cards: [Card])
-    func cardIsSelected(_ card: Card)
-    func cardsIsSet(_ cards: [Card])
-    func cardsNotSet(_ cards: [Card])
-    func cardsIsNotSelected(_ cards: [Card])
-    func cardIsNotSelected(_ card: Card)
+    func takeCard(_ card: Card, withState state: CardState)
 }
 
 final class SetGame {
@@ -42,29 +38,34 @@ final class SetGame {
     func cardIsTapped(card: Card?) {
         guard let card = card else { return }
         var thisCardIsSelectedAlready = false
-        
         if !selectedCards.isEmpty {
             thisCardIsSelectedAlready = checkCardForAvailabilityInSelectedCards(card: card)
         }
         if !thisCardIsSelectedAlready {
             if selectedCards.count == 3 {
-                delegate?.cardsIsNotSelected(selectedCards)
+                selectedCards.forEach { card in
+                    delegate?.takeCard(card, withState: .notSelected)
+                }
                 selectedCards.removeAll()
             }
             selectedCards.append(card)
             switch selectedCards.count {
             case 1...2:
-                delegate?.cardIsSelected(card)
+                delegate?.takeCard(card, withState: .selected)
             case 3:
                 if checkSet() {
-                    delegate?.cardsIsSet(selectedCards)
+                    selectedCards.forEach { card in
+                        delegate?.takeCard(card, withState: .set)
+                    }
                 } else {
-                    delegate?.cardsNotSet(selectedCards)
+                    selectedCards.forEach { card in
+                        delegate?.takeCard(card, withState: .notSet)
+                    }
                 }
             default: break
             }
         } else {
-            delegate?.cardIsNotSelected(card)
+            delegate?.takeCard(card, withState: .notSelected)
             selectedCards.removeAll { selectedCard in
                 selectedCard.id == card.id
             }

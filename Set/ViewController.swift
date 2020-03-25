@@ -66,48 +66,23 @@ extension ViewController: GameActionsProtocol {
         }
     }
     
-    func cardIsSelected(_ card: Card) {
+    func takeCard(_ card: Card, withState state: CardState) {
+        switch state {
+        case .notSelected:
+            changeState(card: card, newState: .notSelected)
+        case .selected:
+            changeState(card: card, newState: .selected)
+        case .notSet:
+            changeState(card: card, newState: .notSet)
+        case .set:
+            changeState(card: card, newState: .set)
+        }
+    }
+    
+    private func changeState(card: Card, newState: CardState) {
         cardsView.forEach { cardView in
             if cardView.card?.id == card.id {
-                cardView.setNewState(state: .selected)
-            }
-        }
-    }
-    
-    func cardsIsSet(_ cards: [Card]) {
-        for card in cards {
-            for cardView in cardsView {
-                if cardView.card?.id == card.id {
-                    cardView.setNewState(state: .set)
-                }
-            }
-        }
-    }
-    
-    func cardsNotSet(_ cards: [Card]) {
-        for card in cards {
-            for cardView in cardsView {
-                if cardView.card?.id == card.id {
-                    cardView.setNewState(state: .notSet)
-                }
-            }
-        }
-    }
-    
-    func cardsIsNotSelected(_ cards: [Card]) {
-        for card in cards {
-            for cardView in cardsView {
-                if cardView.card?.id == card.id {
-                    cardView.setNewState(state: .notSelected)
-                }
-            }
-        }
-    }
-    
-    func cardIsNotSelected(_ card: Card) {
-        cardsView.forEach { cardView in
-            if cardView.card?.id == card.id {
-                cardView.setNewState(state: .notSelected)
+                cardView.setNewState(newState)
             }
         }
     }
