@@ -39,6 +39,11 @@ class CardView: UIControl {
         }
     }
     
+    func removeCard() {
+        card = nil
+        layer.borderWidth = 0
+    }
+    
     //MARK: - Private metods
     override func draw(_ rect: CGRect) {
         if card != nil {

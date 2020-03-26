@@ -224,9 +224,9 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i2T-UI-i1M">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-0B-xM5">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-0B-xM5" customClass="DealCardsButtonView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
-                                                <color key="backgroundColor" red="0.56230300659999999" green="0.83189171549999996" blue="0.96080797910000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="DEAL 3 CARDS">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -234,9 +234,9 @@
                                                     <action selector="dealCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEq-Mh-LPe"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-yg-6RX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-yg-6RX" customClass="BlueButtonView" customModule="Set" customModuleProvider="target">
                                                 <rect key="frame" x="128" y="0.0" width="118" height="30"/>
-                                                <color key="backgroundColor" red="0.56230300659999999" green="0.83189171549999996" blue="0.96080797910000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="RESTART">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -268,6 +268,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dealCardsButton" destination="ZdI-0B-xM5" id="ecE-Vd-ogO"/>
                         <outlet property="timeLabel" destination="uy0-Kv-kM4" id="p35-qn-oQs"/>
                         <outletCollection property="cardsView" destination="cXi-8r-P1L" collectionClass="NSMutableArray" id="WpO-bo-RUe"/>
                         <outletCollection property="cardsView" destination="Et4-kz-S4H" collectionClass="NSMutableArray" id="uNe-kl-laD"/>

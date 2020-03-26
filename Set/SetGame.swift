@@ -9,8 +9,10 @@
 import Foundation
 
 protocol GameActionsProtocol: class {
-    func takeCards(cards: [Card])
+    func takeCard(card: Card)
     func takeCard(_ card: Card, withState state: CardState)
+    func gameCardsIsFull(_ state: Bool)
+    func removeСards(_ cards: [Card])
 }
 
 final class SetGame {
@@ -18,7 +20,7 @@ final class SetGame {
     weak var delegate: GameActionsProtocol?
     
     private var deck = [Card]()
-    var gameCards = [Card]()
+    private var gameCards = [Card]()
     private var selectedCards = [Card]()
     
     //MARK: - Life cycle
@@ -26,13 +28,13 @@ final class SetGame {
         createDeck()
     }
     
-    //MARK: - Open metods
+    //MARK: - Open metods    
     func start() {
         while gameCards.count < 12 {
             let card = deck.removeLast()
             gameCards.append(card)
+            delegate?.takeCard(card: card)
         }
-        delegate?.takeCards(cards: gameCards)
     }
     
     func cardIsTapped(card: Card?) {
@@ -56,7 +58,17 @@ final class SetGame {
                 if checkSet() {
                     selectedCards.forEach { card in
                         delegate?.takeCard(card, withState: .set)
+                        gameCards.forEach { gameCard in
+                            gameCards.removeAll { gameCard in
+                                gameCard.id == card.id
+                            }
+                        }
                     }
+                    delegate?.removeСards(selectedCards)
+                    if deck.count >= 3 {
+                        delegate?.gameCardsIsFull(false)
+                    }
+                    selectedCards.removeAll()
                 } else {
                     selectedCards.forEach { card in
                         delegate?.takeCard(card, withState: .notSet)
@@ -73,13 +85,15 @@ final class SetGame {
     }
     
     func dealCards() {
-        if deck.count >= 3 {
-            var gameCards = [Card]()
+        if deck.count >= 3 && gameCards.count < 24 {
             for _ in 1...3 {
-                let card = deck.removeFirst()
+                let card = deck.removeLast()
                 gameCards.append(card)
+                delegate?.takeCard(card: card)
             }
-            delegate?.takeCards(cards: gameCards)
+            if gameCards.count == 24 || deck.count < 3 {
+                delegate?.gameCardsIsFull(true)
+            }
         }
     }
     

@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     //MARK: - IBOutlet
     @IBOutlet var cardsView: [CardView]!
+    @IBOutlet weak var dealCardsButton: DealCardsButtonView!
     @IBOutlet weak var timeLabel: UILabel!
     
     //MARK: - Properties
@@ -24,31 +25,27 @@ class ViewController: UIViewController {
         game.start()
     }
     
-    //MARK: - Private metods
-    
     //MARK: - IBAction
     @IBAction func touchCard(_ sender: CardView) {
         game.cardIsTapped(card: sender.card)
     }
     
-    @IBAction func dealCards(_ sender: UIButton) {
+    @IBAction func dealCards(_ sender: DealCardsButtonView) {
         game.dealCards()
     }
     
-    @IBAction func restartGame(_ sender: UIButton) {
+    @IBAction func restartGame(_ sender: BlueButtonView) {
     }
 }
 
 //MARK: - GameActionsProtocol
 extension ViewController: GameActionsProtocol {
     
-    func takeCards(cards: [Card]) {
-        for card in cards {
-            for view in cardsView {
-                if view.card == nil {
-                    view.card = card
-                    break
-                }
+    func takeCard(card: Card) {
+        for view in cardsView {
+            if view.card == nil {
+                view.card = card
+                break
             }
         }
     }
@@ -66,6 +63,25 @@ extension ViewController: GameActionsProtocol {
         }
     }
     
+    func removeСards(_ cards: [Card]) {
+        let delayTime = DispatchTime.now() + 1.0
+        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+            for cardView in self.cardsView {
+                for card in cards {
+                    if cardView.card?.id == card.id {
+                        cardView.removeCard()
+                    }
+                }
+            }
+        })
+    }
+    
+    func gameCardsIsFull(_ state: Bool) {
+        dealCardsButton.changeState(state)
+    }
+    
+    
+    //MARK: - Private metods
     private func changeState(card: Card, newState: CardState) {
         cardsView.forEach { cardView in
             if cardView.card?.id == card.id {
