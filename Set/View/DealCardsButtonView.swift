@@ -10,12 +10,12 @@ import UIKit
 
 class DealCardsButtonView: BlueButtonView {
     
-    func changeState(_ newState: Bool) {
-        isHidden = newState
-    }
-    
+    //MARK: - Public metods
     func setDefaultState() {
         isHidden = false
     }
-
+    
+    func changeState(_ newState: Bool) {
+        isHidden = newState
+    }
 }

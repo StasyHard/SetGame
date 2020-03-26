@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     //MARK: - Properties
-    let game = SetGame()
+    private let game = SetGame()
     private var timer = Timer()
     private var timeCounter = 0
     
@@ -26,7 +26,6 @@ class ViewController: UIViewController {
         game.delegate = self
         game.start()
         runTimer()
-        
     }
     
     //MARK: - IBAction
@@ -44,16 +43,16 @@ class ViewController: UIViewController {
         }
         dealCardsButton.setDefaultState()
         game.restart()
+        runTimer()
     }
 }
 
 // MARK: - Timer
 extension ViewController {
     
-    //MARK: - Metods
+    //MARK: - Private metods
     private func runTimer() {
-        timer.invalidate()
-        timeCounter = 0
+        resetParameters()
         timer = Timer.scheduledTimer(timeInterval: 1.0,
                                      target: self,
                                      selector: #selector(self.updateTimer),
@@ -61,7 +60,13 @@ extension ViewController {
                                      repeats: true)
     }
     
-    @objc func updateTimer() {
+    private func resetParameters() {
+        timer.invalidate()
+        timeCounter = 0
+        timeLabel.text = "TIME: " + timeString(time: timeCounter)
+    }
+    
+    @objc private func updateTimer() {
         timeCounter += 1
         timeLabel.text = "TIME: " + timeString(time: timeCounter)
     }
@@ -83,7 +88,7 @@ extension ViewController {
 
 //MARK: - GameActionsProtocol
 extension ViewController: GameActionsProtocol {
-    
+    //MARK: - Delegate metods
     func takeCard(card: Card) {
         for view in cardsView {
             if view.card == nil {
@@ -122,7 +127,6 @@ extension ViewController: GameActionsProtocol {
     func gameCardsIsFull(_ state: Bool) {
         dealCardsButton.changeState(state)
     }
-    
     
     //MARK: - Private metods
     private func changeState(card: Card, newState: CardState) {

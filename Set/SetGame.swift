@@ -80,6 +80,7 @@ final class SetGame {
     }
     
     func restart() {
+        deck.removeAll()
         gameCards.removeAll()
         selectedCards.removeAll()
         start()
@@ -130,7 +131,6 @@ final class SetGame {
     private func setActions() {
         selectedCards.forEach { card in
             delegate?.takeCard(card, withState: .set)
-            
             gameCards.forEach { gameCard in
                 gameCards.removeAll { gameCard in
                     gameCard.id == card.id
@@ -139,7 +139,6 @@ final class SetGame {
         }
         delegate?.removeСards(selectedCards)
         selectedCards.removeAll()
-        
         if deck.count >= 3 {
             delegate?.gameCardsIsFull(false)
         }
