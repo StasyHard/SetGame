@@ -35,6 +35,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func restartGame(_ sender: BlueButtonView) {
+        for cardView in cardsView {
+            cardView.removeCard()
+        }
+        dealCardsButton.setDefaultState()
+        game.restart()
     }
 }
 

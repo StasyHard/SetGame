@@ -13,5 +13,9 @@ class DealCardsButtonView: BlueButtonView {
     func changeState(_ newState: Bool) {
         isHidden = newState
     }
+    
+    func setDefaultState() {
+        isHidden = false
+    }
 
 }

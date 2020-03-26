@@ -23,13 +23,9 @@ final class SetGame {
     private var gameCards = [Card]()
     private var selectedCards = [Card]()
     
-    //MARK: - Life cycle
-    init() {
-        createDeck()
-    }
-    
     //MARK: - Open metods    
     func start() {
+        createDeck()
         while gameCards.count < 12 {
             let card = deck.removeLast()
             gameCards.append(card)
@@ -56,23 +52,9 @@ final class SetGame {
                 delegate?.takeCard(card, withState: .selected)
             case 3:
                 if checkSet() {
-                    selectedCards.forEach { card in
-                        delegate?.takeCard(card, withState: .set)
-                        gameCards.forEach { gameCard in
-                            gameCards.removeAll { gameCard in
-                                gameCard.id == card.id
-                            }
-                        }
-                    }
-                    delegate?.removeСards(selectedCards)
-                    if deck.count >= 3 {
-                        delegate?.gameCardsIsFull(false)
-                    }
-                    selectedCards.removeAll()
+                    setActions()
                 } else {
-                    selectedCards.forEach { card in
-                        delegate?.takeCard(card, withState: .notSet)
-                    }
+                    notSetActions()
                 }
             default: break
             }
@@ -97,7 +79,27 @@ final class SetGame {
         }
     }
     
+    func restart() {
+        gameCards.removeAll()
+        selectedCards.removeAll()
+        start()
+    }
+    
     //MARK: - Private metods
+    private func createDeck() {
+        for type in Figure.TypeFigure.all {
+            for count in Figure.Count.all{
+                for color in Figure.Color.all {
+                    for fill in Figure.Fill.all {
+                        let figure = Figure(type: type, color: color, fill: fill, count: count)
+                        deck.append(Card(figure: figure))
+                    }
+                }
+            }
+        }
+        deck.shuffle()
+    }
+    
     private func checkCardForAvailabilityInSelectedCards(card: Card) -> Bool {
         var isSelected = false
         selectedCards.forEach { selectedCard in
@@ -108,7 +110,6 @@ final class SetGame {
         }
         return isSelected
     }
-    
     
     private func checkSet() -> Bool {
         let figure1 = selectedCards[0].figure
@@ -126,17 +127,27 @@ final class SetGame {
         return false
     }
     
-    private func createDeck() {
-        for type in Figure.TypeFigure.all {
-            for count in Figure.Count.all{
-                for color in Figure.Color.all {
-                    for fill in Figure.Fill.all {
-                        let figure = Figure(type: type, color: color, fill: fill, count: count)
-                        deck.append(Card(figure: figure))
-                    }
+    private func setActions() {
+        selectedCards.forEach { card in
+            delegate?.takeCard(card, withState: .set)
+            
+            gameCards.forEach { gameCard in
+                gameCards.removeAll { gameCard in
+                    gameCard.id == card.id
                 }
             }
         }
-        deck.shuffle()
+        delegate?.removeСards(selectedCards)
+        selectedCards.removeAll()
+        
+        if deck.count >= 3 {
+            delegate?.gameCardsIsFull(false)
+        }
+    }
+    
+    private func notSetActions() {
+        selectedCards.forEach { card in
+            delegate?.takeCard(card, withState: .notSet)
+        }
     }
 }
