@@ -17,12 +17,16 @@ class ViewController: UIViewController {
     
     //MARK: - Properties
     let game = SetGame()
+    private var timer = Timer()
+    private var timeCounter = 0
     
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         game.delegate = self
         game.start()
+        runTimer()
+        
     }
     
     //MARK: - IBAction
@@ -40,6 +44,40 @@ class ViewController: UIViewController {
         }
         dealCardsButton.setDefaultState()
         game.restart()
+    }
+}
+
+// MARK: - Timer
+extension ViewController {
+    
+    //MARK: - Metods
+    private func runTimer() {
+        timer.invalidate()
+        timeCounter = 0
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(self.updateTimer),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        timeCounter += 1
+        timeLabel.text = "TIME: " + timeString(time: timeCounter)
+    }
+    
+    private func timeString(time: Int) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        if hours == 0 && minutes == 0 {
+            return String("\(seconds)s")
+        } else if hours == 0 {
+            return String("\(minutes)m\(seconds)s")
+        } else {
+            return String("\(hours)h\(minutes)m\(seconds)s")
+        }
     }
 }
 
