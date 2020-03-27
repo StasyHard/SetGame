@@ -112,16 +112,13 @@ extension ViewController: GameActionsProtocol {
     }
     
     func removeСards(_ cards: [Card]) {
-        let delayTime = DispatchTime.now() + 1.0
-        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
-            for cardView in self.cardsView {
-                for card in cards {
-                    if cardView.card?.id == card.id {
-                        cardView.removeCard()
-                    }
+        for cardView in self.cardsView {
+            for card in cards {
+                if cardView.card?.id == card.id {
+                    self.removeAnimation(cardView: cardView)
                 }
             }
-        })
+        }
     }
     
     func gameCardsIsFull(_ state: Bool) {
@@ -134,6 +131,21 @@ extension ViewController: GameActionsProtocol {
             if cardView.card?.id == card.id {
                 cardView.setNewState(newState)
             }
+        }
+    }
+}
+
+//MARK: - Animation
+extension ViewController {
+    private func removeAnimation(cardView: CardView) {
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5,
+                                                       delay: 0.1,
+                                                       animations: { cardView.alpha = 0.0 }) {
+                                                        animation in
+                                                        if animation == .end {
+                                                            cardView.removeCard()
+                                                            cardView.alpha = 1.0
+                                                        }
         }
     }
 }

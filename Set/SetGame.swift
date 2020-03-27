@@ -63,6 +63,9 @@ final class SetGame {
             selectedCards.removeAll { selectedCard in
                 selectedCard.id == card.id
             }
+            selectedCards.forEach { selectedCard in
+                delegate?.takeCard(selectedCard, withState: .selected)
+            }
         }
     }
     
